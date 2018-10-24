@@ -6,7 +6,15 @@
 using namespace std;
 
 void QS::sortAll() {
-    
+    /*
+    if((last-first) < 1) {
+        return;
+    }
+    int pivot = medianOfThree(left, right);
+    pivot = partition(left, right, pivot);
+    quicksort(left, pivot-1);
+    quicksort(pivot+1, last);
+    */
 }
 int QS::medianOfThree(int left, int right) {
     /*
@@ -32,7 +40,8 @@ int QS::medianOfThree(int left, int right) {
     table[first] = table[down];
     table[down] = tmp;
     
-    return down;
+    pivotIndex = down;
+    return pivotIndex;
     */
 }
 int QS::partition(int left, int right, int pivotIndex) {
