@@ -2,6 +2,7 @@
 #include "QSInterface.h"
 #include <iostream>
 #include <string>
+#include <array>
 
 using namespace std;
 
@@ -26,4 +27,5 @@ protected:
     int pivotIndex;
     int capacity;
     int addItr;
+    string arrayString = "";
 };
