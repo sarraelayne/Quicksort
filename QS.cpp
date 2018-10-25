@@ -48,18 +48,22 @@ int QS::partition(int left, int right, int pivotIndex) {
     
 }
 string QS::getArray() const {
-    /*
-    for (int i = 0; i < array.size(); i++) {
+    /*size = sizeof(array)/sizeof(array[0]);
+    for (int i = 0; i < size; i++) {
         cout << array[i];
-        if (i < (array.size() - 1)) {
+        string str = to_string(array[i]);
+        cout << str;
+        //arrayString.append(str);
+        if (i < (size - 1)) {
             cout << ",";
+            //arrayString.append(",");
         }
-    }
-    */
+    }*/
     return arrayString;
 }
 int QS::getSize() const {
-    //return array.size();
+    int size = sizeof(array)/sizeof(array[0]);
+    return size;
 }
 bool QS::addToArray(int value) {
     /*
@@ -74,9 +78,8 @@ bool QS::addToArray(int value) {
     */
 }
 bool QS::createArray(int capacity) {
-    /*
-    if (!array.empty()) {
-        clear array;
+    if ((sizeof(array)/sizeof(array[0])) == 0) {
+        clear();
     }
     new int[capacity];
     
@@ -86,12 +89,9 @@ bool QS::createArray(int capacity) {
     else {
         return false;
     }
-    */
 }
 void QS::clear() {
-    /*
-    for (int i = 0; i < capacity; i++) {
+    /*for (int i = 0; i < capacity; i++) {
         delete array[i];
-    }
-    */
+    }*/
 }

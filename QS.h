@@ -28,4 +28,5 @@ protected:
     int capacity;
     int addItr;
     string arrayString = "";
+    int array[];
 };
