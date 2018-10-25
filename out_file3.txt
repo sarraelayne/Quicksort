@@ -1,14 +1,14 @@
 createArray 10 True
-addToArray 10 True
-addToArray 9 True
-addToArray 8 True
-addToArray 7 True
-addToArray 6 True
-addToArray 5 True
-addToArray 4 True
-addToArray 3 True
-addToArray 2 True
-addToArray 1 True
+addToArray 10 False
+addToArray 9 False
+addToArray 8 False
+addToArray 7 False
+addToArray 6 False
+addToArray 5 False
+addToArray 4 False
+addToArray 3 False
+addToArray 2 False
+addToArray 1 False
 getArray
  
 partition 0 9 9 4205158
@@ -48,12 +48,12 @@ partition 0 3 1 4205158
 getArray
  
 createArray 6 True
-addToArray 2 True
-addToArray 2 True
-addToArray 2 True
-addToArray 3 True
-addToArray 1 True
-addToArray 2 True
+addToArray 2 False
+addToArray 2 False
+addToArray 2 False
+addToArray 3 False
+addToArray 1 False
+addToArray 2 False
 getArray
  
 partition 0 2 1 4205158
