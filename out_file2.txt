@@ -1,69 +1,69 @@
 createArray 5 True
-addToArray 10 False
-addToArray 5 False
-addToArray 0 False
-addToArray -5 False
-addToArray -10 False
+addToArray 10 True
+addToArray 5 True
+addToArray 0 True
+addToArray -5 True
+addToArray -10 True
 getArray
  
-medianOfThree 0 4 4205142
+medianOfThree 0 4 4206486
 getArray
  
-medianOfThree 0 0 4205142
+medianOfThree 0 0 4206486
 getArray
  
-medianOfThree 0 2 4205142
+medianOfThree 0 2 4206486
 getArray
  
-medianOfThree 1 3 4205142
+medianOfThree 1 3 4206486
 getArray
  
 createArray 10 True
 getArray
  
-addToArray 10 False
-addToArray 9 False
-addToArray 8 False
-addToArray 7 False
-addToArray 6 False
-addToArray 5 False
-addToArray 4 False
-addToArray 3 False
-addToArray 2 False
-addToArray 1 False
+addToArray 10 True
+addToArray 9 True
+addToArray 8 True
+addToArray 7 True
+addToArray 6 True
+addToArray 5 True
+addToArray 4 True
+addToArray 3 True
+addToArray 2 True
+addToArray 1 True
 getArray
  
-medianOfThree 0 9 4205142
+medianOfThree 0 9 4206486
 getArray
  
-medianOfThree 0 2 4205142
+medianOfThree 0 2 4206486
 getArray
  
-medianOfThree 2 4 4205142
+medianOfThree 2 4 4206486
 getArray
  
-medianOfThree 4 6 4205142
+medianOfThree 4 6 4206486
 getArray
  
-medianOfThree 6 8 4205142
+medianOfThree 6 8 4206486
 getArray
  
 createArray 4 True
-addToArray 2 False
-addToArray 1 False
-addToArray 1 False
-addToArray 1 False
+addToArray 2 True
+addToArray 1 True
+addToArray 1 True
+addToArray 1 True
 getArray
  
-medianOfThree 1 3 4205142
+medianOfThree 1 3 4206486
 getArray
  
-medianOfThree 0 2 4205142
+medianOfThree 0 2 4206486
 getArray 
  
-medianOfThree 0 3 4205142
+medianOfThree 0 3 4206486
 getArray
  
-medianOfThree 1 3 4205142
+medianOfThree 1 3 4206486
 getArray
  

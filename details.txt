@@ -1,13 +1,13 @@
 out_file1.txt
  1,2,3,4,5						      |	 
-getSize 1						      |	getSize 0
-getSize 2						      |	getSize 0
+getSize 0						      |	getSize 2
+getSize 0						      |	getSize 2
+getSize 1						      |	getSize 2
  -5,-4							      |	 
-getSize 4						      |	getSize 0
-getSize 5						      |	getSize 0
+getSize 4						      |	getSize 2
+getSize 5						      |	getSize 2
  -5,-4,-3,-2,-1						      |	 
-addToArray 6 False					      |	addToArray 6 True
-getSize 5						      |	getSize 0
+getSize 5						      |	getSize 2
  -5,-4,-3,-2,-1						      |	 
 out_file2.txt
  10,5,0,-5,-10						      |	 

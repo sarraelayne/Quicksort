@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <array>
+#include <sstream>
 
 using namespace std;
 
@@ -50,30 +51,25 @@ int QS::partition(int left, int right, int pivotIndex) {
 string QS::getArray() const {
     int size = sizeof(array)/sizeof(array[0]);
     cout << "size: " << capacity << endl;
-    /*
     
-    for (int i = 0; i < size; i++) {
-        cout << array[i];
-        string str = to_string(array[i]);
-        cout << str;
-        //arrayString.append(str);
-        if (i < (size - 1)) {
-            cout << ",";
-            //arrayString.append(",");
+    ostringstream os;
+    while(currLoc < capacity) {
+        os << currLoc;
+        if (currLoc < (capacity - 1)) {
+            os << ",";
         }
     }
-    */
+    arrayString(os.str());
     return arrayString;
 }
 int QS::getSize() const {
     int size = sizeof(array)/sizeof(array[0]);
-    cout << "getsize: " << size << endl;
     return size;
 }
-bool QS::addToArray(int value) {
-    if (addItr < capacity) {
-        array[addItr] = value;
-        addItr++;
+bool QS::addToArray(int value) { //returning false when should return true
+    if (currLoc < capacity) {
+        array[currLoc] = value;
+        currLoc++;
         return true;
     }
     else {
@@ -81,12 +77,12 @@ bool QS::addToArray(int value) {
     }
 }
 bool QS::createArray(int capacity) {
-    if ((sizeof(array)/sizeof(array[0])) == 0) {
+    if ((sizeof(array)/sizeof(array[0])) != 0) {
         clear();
     }
-    new int[capacity];
-    cout << "Capacity: " << capacity << endl;
-    
+    array = new int[capacity];
+    currLoc = 0;
+    this->capacity = capacity;
     if (capacity > 0) {
         return true;
     }
@@ -95,9 +91,8 @@ bool QS::createArray(int capacity) {
     }
 }
 void QS::clear() {
-    /*
-    for (int i = 0; i < capacity; i++) {
-        delete array[i];
-    }
-    */
+    currLoc = 0;
+    /*if ((sizeof(array)/sizeof(array[0])) != 0) {
+        clear();
+    }*/
 }
