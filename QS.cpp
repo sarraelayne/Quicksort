@@ -7,66 +7,63 @@
 using namespace std;
 
 void QS::sortAll() {
-    /*
-    if((last-first) < 1) {
+    if((right-left) < 1) {
         return;
     }
     int pivot = medianOfThree(left, right);
     pivot = partition(left, right, pivot);
     quicksort(left, pivot-1);
-    quicksort(pivot+1, last);
-    */
+    quicksort(pivot+1, right);
+}
+void QS::quicksort(int left, int right) {
+    
 }
 int QS::medianOfThree(int left, int right) {
-    /*
-    int tmp = table[pivotIndex];
-    table[pivotIndex] = table[0];
-    table[0] = tmp;
+    
+    int tmp = array[pivotIndex];
+    array[pivotIndex] = array[0];
+    array[0] = tmp;
     int up = left + 1;
     int down = right;
     do {
-        while ((table[up] <= table[0]) && (up < last)) {
-            up++
+        while ((array[up] <= array[0]) && (up < right)) {
+            up++;
         }
-        while ((table[down] > table[0]) && (down > first)) {
+        while ((array[down] > array[0]) && (down > left)) {
             down--;
         }
         if (up < down) {
-            tmp = table[up];
-            table[up] = table[down];
-            table[down] = tmp;
+            tmp = array[up];
+            array[up] = array[down];
+            array[down] = tmp;
         }
     } while (up < down);
-    tmp = table[0];
-    table[first] = table[down];
-    table[down] = tmp;
+    tmp = array[0];
+    array[left] = array[down];
+    array[down] = tmp;
     
     pivotIndex = down;
     return pivotIndex;
-    */
 }
 int QS::partition(int left, int right, int pivotIndex) {
     
 }
 string QS::getArray() const {
-    int size = sizeof(array)/sizeof(array[0]);
-    cout << "size: " << capacity << endl;
+    ostringstream oss;
     
-    ostringstream os;
     while(currLoc < capacity) {
-        os << currLoc;
+        oss << array[currLoc];
         if (currLoc < (capacity - 1)) {
-            os << ",";
+            oss << ",";
         }
-    }
-    arrayString(os.str());
-    return arrayString;
+    };
+    return oss.str();
 }
 int QS::getSize() const {
     int size = sizeof(array)/sizeof(array[0]);
     return size;
 }
-bool QS::addToArray(int value) { //returning false when should return true
+bool QS::addToArray(int value) {
     if (currLoc < capacity) {
         array[currLoc] = value;
         currLoc++;
@@ -78,7 +75,7 @@ bool QS::addToArray(int value) { //returning false when should return true
 }
 bool QS::createArray(int capacity) {
     if ((sizeof(array)/sizeof(array[0])) != 0) {
-        clear();
+        delete [] array;
     }
     array = new int[capacity];
     currLoc = 0;
@@ -92,7 +89,8 @@ bool QS::createArray(int capacity) {
 }
 void QS::clear() {
     currLoc = 0;
-    /*if ((sizeof(array)/sizeof(array[0])) != 0) {
-        clear();
-    }*/
+    /*
+    delete [] array;
+    array = 0;
+    */
 }

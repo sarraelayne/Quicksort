@@ -12,6 +12,7 @@ public:
 	~QS() {}
 	
 	void sortAll();
+	void quicksort(int left, int right);
 	int medianOfThree(int left, int right);
 	int partition(int left, int right, int pivotIndex);
 	string getArray() const;
@@ -27,6 +28,6 @@ protected:
     int pivotIndex;
     int capacity;
     int currLoc;
-    string arrayString = "";
+    string arrayString;
     int *array;
 };
