@@ -27,6 +27,7 @@ protected:
     int right;
     int middle;
     int pivotIndex;
+    int pivot;
     int capacity;
     int currLoc;
     string arrayString;

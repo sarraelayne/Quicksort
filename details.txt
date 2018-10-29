@@ -3,11 +3,8 @@ out_file2.txt
 out_file3.txt
 out_file4.txt
 partition 0 5 3 -1					      |	partition 0 5 3 3
-partition -1 2 1 -1					      |	partition -1 2 1 1
 partition 0 3 2 -1					      |	partition 0 3 2 2
 partition 1 1 1 -1					      |	partition 1 1 1 1
-partition 0 1 2 -1					      |	partition 0 1 2 1
- 1,2,3							      |	 2,3,1
 out_file5.txt
  0,1,2,3,4,5,6,7,8,9					      |	 9,8,7,6,5,4,3,2,1,0
  0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9		      |	 9,8,7,6,5,4,3,2,1,0,9,8,7,6,5,4,3,2,1,0

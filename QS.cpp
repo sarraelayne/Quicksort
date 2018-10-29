@@ -10,7 +10,7 @@ void QS::sortAll() {
     if((right-left) < 1) {
         return;
     }
-    int pivot = medianOfThree(left, right);
+    pivot = medianOfThree(left, right);
     pivot = partition(left, right, pivotIndex);
     quicksort(left, pivot-1);
     quicksort(pivot+1, right);
@@ -20,7 +20,7 @@ void QS::quicksort(int left, int right) {
     if (array[left] < array[right]) {
         return;
     }
-    if (right < left) {
+    if (array[right] < array[left]) {
         tmp = array[right];
         array[right] = array[left];
         array[left] = array[right];
@@ -50,6 +50,9 @@ int QS::medianOfThree(int left, int right) {
     return middle;
 }
 int QS::partition(int left, int right, int pivotIndex) {
+    if (array == NULL || left < 0 || right > arrCap || pivotIndex < left || pivotIndex > right || left > right) {
+        return -1;
+    }
     int tmp = array[pivotIndex];
     array[pivotIndex] = array[left];
     array[left] = tmp;
@@ -71,8 +74,6 @@ int QS::partition(int left, int right, int pivotIndex) {
     tmp = array[left];
     array[left] = array[down];
     array[down] = tmp;
-    cout << "down" << down << endl;
-    cout << "up" << up << endl;
     return down;
 }
 string QS::getArray() const {
