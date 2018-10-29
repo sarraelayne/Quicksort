@@ -25,9 +25,11 @@ protected:
     int value;
     int left;
     int right;
+    int middle;
     int pivotIndex;
     int capacity;
     int currLoc;
     string arrayString;
     int *array;
+    int arrCap;
 };

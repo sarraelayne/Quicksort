@@ -16,10 +16,40 @@ void QS::sortAll() {
     quicksort(pivot+1, right);
 }
 void QS::quicksort(int left, int right) {
-    
+    int tmp;
+    if (array[left] < array[right]) {
+        return;
+    }
+    if (right < left) {
+        tmp = array[right];
+        array[right] = array[left];
+        array[left] = array[right];
+    }
 }
 int QS::medianOfThree(int left, int right) {
-    
+    int tmp;
+    if (array == 0 || left >= right || left < 0 || right > currLoc -1) {
+        return -1;
+    }
+    middle = (left + right)/2;
+    if (array[left] > array[middle]) {
+        tmp = array[left];
+        array[left] = array[middle];
+        array[middle] = tmp;
+    }
+    if (array[right] < array[middle]) {
+        tmp = array[right];
+        array[right] = array[middle];
+        array[middle] = tmp;
+    }
+    if (array[middle] < array[left]) {
+        tmp = array[left];
+        array[left] = array[middle];
+        array[middle] = tmp;
+    }
+    return middle;
+}
+int QS::partition(int left, int right, int pivotIndex) {
     int tmp = array[pivotIndex];
     array[pivotIndex] = array[0];
     array[0] = tmp;
@@ -41,30 +71,29 @@ int QS::medianOfThree(int left, int right) {
     tmp = array[0];
     array[left] = array[down];
     array[down] = tmp;
-    
+    cout << "down" << down << endl;
+    cout << "up" << up << endl;
     pivotIndex = down;
     return pivotIndex;
 }
-int QS::partition(int left, int right, int pivotIndex) {
-    
-}
 string QS::getArray() const {
-    ostringstream oss;
-    
-    while(currLoc < capacity) {
-        oss << array[currLoc];
-        if (currLoc < (capacity - 1)) {
-            oss << ",";
+    stringstream ss;
+    if (currLoc == 0 || arrCap <=0) {
+        return "";
+    }
+    for (int i = 0; i < currLoc; i++) {
+        if (i != 0) {
+            ss << ",";
         }
-    };
-    return oss.str();
+        ss << array[i];
+    }
+    return ss.str();
 }
 int QS::getSize() const {
-    int size = sizeof(array)/sizeof(array[0]);
-    return size;
+    return currLoc;
 }
 bool QS::addToArray(int value) {
-    if (currLoc < capacity) {
+    if (currLoc < arrCap) {
         array[currLoc] = value;
         currLoc++;
         return true;
@@ -74,13 +103,10 @@ bool QS::addToArray(int value) {
     }
 }
 bool QS::createArray(int capacity) {
-    if ((sizeof(array)/sizeof(array[0])) != 0) {
-        delete [] array;
-    }
     array = new int[capacity];
     currLoc = 0;
-    this->capacity = capacity;
-    if (capacity > 0) {
+    arrCap = capacity;
+    if (arrCap > 0) {
         return true;
     }
     else {
@@ -89,8 +115,11 @@ bool QS::createArray(int capacity) {
 }
 void QS::clear() {
     currLoc = 0;
-    /*
+    if (array == NULL) {
+        return;
+    }
     delete [] array;
     array = 0;
-    */
+    arrCap = 0;
+    array = NULL;
 }
