@@ -35,4 +35,4 @@ partition 1 1 1 1
 medianOfThree 2 0 -1
 partition 0 1 2 1
 getArray
- 2,3,2
+ 2,3,1
